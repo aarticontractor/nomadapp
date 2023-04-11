@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NomadApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 
@@ -13,13 +13,25 @@
 <body>
 
   <header> 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <form>
-     <p>Vacation Guide</p>
-       <button class="button is-dark">Search</button>
+    <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
+      <h1 class="is-size-3">NomadApp✈️</h1>
+      <br>
+      <h2>Your one stop guide for travel!</h2>
+  <div class="navbar-end is-dark">
+    <!-- <form>
        <input class="input is-primary" type="text" placeholder="Search City">
-       </form>
+       <button class="button is-info">Search</button>
+      </form> -->
+      <div class="field is-grouped">
+        <p class="control is-expanded">
+          <input class="input" type="text" placeholder="Find a city..">
+        </p>
+        <p class="control">
+          <a class="button is-info">
+            Search
+          </a>
+        </p>
+      </div>
   </div> 
 </header>
 
@@ -48,7 +60,7 @@
     </div>
     <div class="tile is-parent">
       <article class="tile is-child notification is-danger">
-        <p class="title">Place 4</p>
+        <p class="title">Fun Facts!</p>
         <p class="subtitle">Aligned with the right tile</p>
         <div class="content">
           <!-- Content -->
