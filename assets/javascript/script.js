@@ -12,6 +12,7 @@ const places = document.querySelectorAll(".tile .notification.box.is-lite");
 // Add a click event listener to the search button
 searchButton.addEventListener("click", () => {
   searchCity(searchInput.value);
+  console.log("click button test")
 });
 
 // Function to search for city venues
@@ -93,4 +94,4 @@ function getVenuePhoto(venueId, index) {
 }
 
 // Function to update the place element with the photo
-function updatePlacePhoto(index,
+// function updatePlacePhoto(index,
