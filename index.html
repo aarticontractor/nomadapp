@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NomadApp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 
@@ -20,10 +20,10 @@
   <div class="navbar-end is-dark">
       <div class="field is-grouped">
         <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Find a city..">
+          <input id= "city-input" class="input" type="text" placeholder="Find a city..">
         </p>
         <p class="control">
-          <a class="button is-info">
+          <a id = "search-city" class="button  is-info">
             Search
           </a>
         </p>
@@ -37,15 +37,18 @@
       <div class="tile is-parent is-vertical">
         </article>
         <article class="tile is-child notification has-background-warning-light is-hovered">
-          <p class="title">Place</p>
-          <p class="subtitle">Nearby Restaurants link</p>
-          <figure class="image is-3by1">
+          <p class="title" id="city-name"></p>
+          <p >Date: <span id="day"></span></p>
+          <p id="emoji"></p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Temp(F): <span id="temp"></span></li>
+            <li class="list-group-item">Humidity: <span id="humidity"></span></li>
+            <li class="list-group-item">Wind Speed: <span id="wind"></span></li>
+          </ul>
+          <!-- <figure class="image is-3by1">
             <img src="https://bulma.io/images/placeholders/640x480.png"> 
-          </figure>
-          <div class="content">
-            Content
-      
-          </div>
+          </figure> -->
+          
         </article>
       </div>
     </div> 
@@ -80,6 +83,11 @@
     </p>
   </div>
 </footer>
-<script src="scripts.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+  crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
