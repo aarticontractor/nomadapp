@@ -1,82 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NomadApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomadApp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="css" href="/assets/css/style.css">
 </head>
 
 
 
 <body>
+  <header>
+    <div class="box navbar columns " role="navigation" aria-label="main navigation" style="padding: 20px;">
+      <!-- title -->
+      <div class="navbar-brand column is-four-fifths">
+        <div class="title is-1">NomadApp</div>
+        <div class="title is-4">Your one-stop guide for travel</div>
+      </div>
+      <!-- search -->
+      <div class="column is-one-fifth">
+        <form class="field is-grouped">
+          <input class="input is-primary" type="text" placeholder="Search City">
+          <button class="button is-dark">Search</button>
+        </form>
 
-  <header> 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <form>
-     <p>Vacation Guide</p>
-       <button class="button is-dark">Search</button>
-       <input class="input is-primary" type="text" placeholder="Search City">
-       </form>
-  </div> 
-</header>
+      </div>
+    </div>
 
-  <div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
-    <div class="tile">
-      <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-primary">
-          <p class="title">Place 1</p>
-          <p class="subtitle">Top tile</p>
-        </article>
-        <article class="tile is-child notification is-warning">
-          <p class="title">Place 2</p>
-          <p class="subtitle">Bottom tile</p>
-        </article>
+  </header>
+
+  <div class="tile is-ancestor" style="padding: 20px;">
+    <div class="tile is-vertical is-8 ">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification box is-lite">
+            <p class="title">Place 1</p>
+            <p class="subtitle">Top tile</p>
+          </article>
+          <article class="tile is-child notification box is-lite">
+            <p class="title">Place 2</p>
+            <p class="subtitle">Bottom tile</p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification box is-lite">
+            <p class="title">Place 3</p>
+            <p class="subtitle">With an image</p>
+            <figure class="image is-4by3">
+              <!-- <img src="https://bulma.io/images/placeholders/640x480.png"> Image of the place -->
+            </figure>
+          </article>
+        </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title">Place 3</p>
-          <p class="subtitle">With an image</p>
-          <figure class="image is-4by3">
-            <!-- <img src="https://bulma.io/images/placeholders/640x480.png"> Image of the place -->
-          </figure>
+        <article class="tile is-child notification box is-lite">
+          <p class="title">Place 4</p>
+          <p class="subtitle">Aligned with the right tile</p>
+          <div class="content">
+            <!-- Content -->
+          </div>
         </article>
       </div>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
-        <p class="title">Place 4</p>
-        <p class="subtitle">Aligned with the right tile</p>
+      <article class="tile is-child notification box is-lite">
         <div class="content">
-          <!-- Content -->
+          <p class="title">Place 5</p>
+          <p class="subtitle">With even more content</p>
+          <div class="content">
+            <!-- Content -->
+          </div>
         </div>
       </article>
     </div>
   </div>
-  <div class="tile is-parent">
-    <article class="tile is-child notification is-success">
-      <div class="content">
-        <p class="title">Place 5</p>
-        <p class="subtitle">With even more content</p>
-        <div class="content">
-          <!-- Content -->
-        </div>
-      </div>
-    </article>
-  </div>
-  </body>
-</div>
-    
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Made with 💟 by Brian Alberson, Sean Tamturk and Aarti Contractor</strong> 
-    </p>
-  </div>
-</footer>
-<script src="scripts.js"></script>
+
+  <footer class="footer box" style="padding: 20px;">
+    <div class="content has-text-centered ">
+      <p>
+        <strong>Made with 💟 by Brian Alberson, Sean Tamturk and Aarti Contractor</strong>
+      </p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
