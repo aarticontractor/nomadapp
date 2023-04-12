@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NomadApp</title>
   <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="css" href="/assets/css/style.css">
 </head>
 
 
 
 <body>
   <header>
-    <div class="navbar columns " role="navigation" aria-label="main navigation" style="padding: 20px;">
+    <div class="box navbar columns " role="navigation" aria-label="main navigation" style="padding: 20px;">
       <!-- title -->
       <div class="navbar-brand column is-four-fifths">
         <div class="title is-1">NomadApp</div>
@@ -31,21 +32,21 @@
 
   </header>
 
-  <div class="tile is-ancestor">
-    <div class="tile is-vertical is-8">
+  <div class="tile is-ancestor" style="padding: 20px;">
+    <div class="tile is-vertical is-8 ">
       <div class="tile">
         <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification is-primary">
+          <article class="tile is-child notification box is-lite">
             <p class="title">Place 1</p>
             <p class="subtitle">Top tile</p>
           </article>
-          <article class="tile is-child notification is-warning">
+          <article class="tile is-child notification box is-lite">
             <p class="title">Place 2</p>
             <p class="subtitle">Bottom tile</p>
           </article>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
+          <article class="tile is-child notification box is-lite">
             <p class="title">Place 3</p>
             <p class="subtitle">With an image</p>
             <figure class="image is-4by3">
@@ -55,7 +56,7 @@
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-danger">
+        <article class="tile is-child notification box is-lite">
           <p class="title">Place 4</p>
           <p class="subtitle">Aligned with the right tile</p>
           <div class="content">
@@ -65,7 +66,7 @@
       </div>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child notification is-success">
+      <article class="tile is-child notification box is-lite">
         <div class="content">
           <p class="title">Place 5</p>
           <p class="subtitle">With even more content</p>
@@ -77,8 +78,8 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="content has-text-centered">
+  <footer class="footer box" style="padding: 20px;">
+    <div class="content has-text-centered ">
       <p>
         <strong>Made with 💟 by Brian Alberson, Sean Tamturk and Aarti Contractor</strong>
       </p>
