@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NomadApp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -13,15 +14,10 @@
 <body>
 
   <header> 
-    <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
-      <h1 class="is-size-3">NomadApp✈️</h1>
-      <br>
-      <h2>Your one stop guide for travel!</h2>
+    <nav class="navbar has-background-grey is-spaced" role="navigation" aria-label="main navigation">
+      <h1 class="is-size-3 has-text-weight-bold is-white">NomadApp✈️</h1>
+      <h2 class="is-size-5 has-text-weight-semibold">Your one stop guide for travel!</h2>
   <div class="navbar-end is-dark">
-    <!-- <form>
-       <input class="input is-primary" type="text" placeholder="Search City">
-       <button class="button is-info">Search</button>
-      </form> -->
       <div class="field is-grouped">
         <p class="control is-expanded">
           <input class="input" type="text" placeholder="Find a city..">
@@ -39,40 +35,59 @@
   <div class="tile is-vertical is-8">
     <div class="tile">
       <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-primary">
+        <article class="tile is-child notification has-background-primary-light is-hovered">
           <p class="title">Place 1</p>
-          <p class="subtitle">Top tile</p>
+          <p class="subtitle">Nearby Restaurants link</p>
+          <figure class="image is-3by1">
+            <img src="https://bulma.io/images/placeholders/640x480.png"> 
+          </figure>
+          <div class="content">
+            <p>JSONP or "JSON with padding" is a communication technique used in JavaScript programs running in web browsers to request data from a server in a different domain, something prohibited by typical web browsers because of the same-origin policy.
+
+              Something like this might help you mate..</p>
+          </div>
         </article>
-        <article class="tile is-child notification is-warning">
+        <article class="tile is-child notification has-background-warning-light is-hovered">
           <p class="title">Place 2</p>
-          <p class="subtitle">Bottom tile</p>
+          <p class="subtitle">Nearby Restaurants link</p>
+          <figure class="image is-3by1">
+            <img src="https://bulma.io/images/placeholders/640x480.png"> 
+          </figure>
+          <div class="content">
+            <!-- Content -->
+          </div>
         </article>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
+        <article class="tile is-child notification has-background-danger-light has-shadow">
           <p class="title">Place 3</p>
-          <p class="subtitle">With an image</p>
-          <figure class="image is-4by3">
-            <!-- <img src="https://bulma.io/images/placeholders/640x480.png"> Image of the place -->
+          <p class="subtitle">Nearby Restaurants link</p>
+          <figure class="image is-3by1">
+            <img src="https://bulma.io/images/placeholders/640x480.png"> 
           </figure>
+          <div class="content">
+            <!-- Content -->
+          </div>
         </article>
       </div>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
+      <article class="tile is-child notification has-background-link-light has-shadow">
         <p class="title">Fun Facts!</p>
         <p class="subtitle">Aligned with the right tile</p>
         <div class="content">
-          <!-- Content -->
+          <p>JSONP or "JSON with padding" is a communication technique used in JavaScript programs running in web browsers to request data from a server in a different domain, something prohibited by typical web browsers because of the same-origin policy.
+
+            Something like this might help you mate..</p>
         </div>
       </article>
     </div>
   </div>
   <div class="tile is-parent">
-    <article class="tile is-child notification is-success">
+    <article class="tile is-child notification has-background-success-light">
       <div class="content">
-        <p class="title">Place 5</p>
-        <p class="subtitle">With even more content</p>
+        <p class="title">Your recent searches</p>
+        <!-- <p class="subtitle"></p> -->
         <div class="content">
           <!-- Content -->
         </div>
@@ -81,10 +96,10 @@
   </div>
 </div>
     
-<footer class="footer">
+<footer class="footer has-background-grey-light">
   <div class="content has-text-centered">
     <p>
-      <strong>Made with 💟 by Brian Alberson, Sean Tamturk and Aarti Contractor</strong> 
+      <strong>Made with 💟 by Brian Alberson, Sean Tamturk & Aarti Contractor</strong> 
     </p>
   </div>
 </footer>
