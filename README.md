@@ -8,6 +8,8 @@ As web developers, working on the NomadApp challenged us to create an interactiv
 
 In addition to building a functional NomadApplication, this project helped us develop problem-solving skills and the ability to work with client-side technologies. Overall, completing the NomadApp was an important step in our development as web developers and prepared us for future web development challenges.
 
+![Website Image](./assets/images/NomadApp.gif)
+
 ## Project Requirements
 
 - Use a CSS framework other than Bootstrap.
@@ -52,4 +54,4 @@ MIT License
 ## Links
 - [Repository](https://github.com/aarticontractor/vacation_guide_project/tree/main)
 - [Website](https://aarticontractor.github.io/vacation_guide_project/)
-- ![Website Image](./assets/images/NomadApp.gif)
+
