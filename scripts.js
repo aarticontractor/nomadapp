@@ -120,7 +120,7 @@ function generateCitySearch() {
     const button = document.createElement('button');
     button.textContent = all_cities[i];
     button.id = 'button' + (i + 1);
-    button.className = 'button  is-info';
+    button.className = 'button is-success';
     button.addEventListener('click', function() {
       const cityButton = this.textContent;
       setCity.textContent = cityButton;
