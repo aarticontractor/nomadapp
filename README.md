@@ -48,3 +48,8 @@ To get started with NomadApp, simply open the link at the bottom of the readme. 
 
 ## License
 MIT License
+
+## Links
+- [Repository](https://github.com/aarticontractor/vacation_guide_project/tree/main)
+- [Website](https://aarticontractor.github.io/vacation_guide_project/)
+- ![Website Image](./assets/images/NomadApp.gif)
