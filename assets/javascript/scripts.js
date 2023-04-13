@@ -10,7 +10,11 @@ const wikiURL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 const unsplashUrl = "https://api.unsplash.com/search/photos?query="
 const unsplashKey = "EN-MXfxw-2FmgE9wEoI4yOd889kOl2R6jK9TlKZuL5w"
 
+// above code is just constant variables that we will use for api calls 
+// to build the page
 
+
+//below makes the list of recent searches in the local storage
 
 const localeSettings = {};
 dayjs.locale(localeSettings);
@@ -24,20 +28,18 @@ var currentWind = document.getElementById("wind");
 
 var all_cities = JSON.parse(localStorage.getItem('top_10_cities')) || [];
 
-
+//below makes a request for the Lattitue and Longiture and uses that to search for weather conditions
 function getLatLon(currentCity) {
     var apiUrl =
         "https://api.openweathermap.org/geo/1.0/direct?q=" +
         currentCity +
         "&limit=5&appid=" +
         apiKey;
-    console.log(apiUrl)
     return fetch(apiUrl)
         .then(function(data) {
             return data.json();
         })
         .then(function(data) {
-            console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
             return {
@@ -51,19 +53,16 @@ function getLatLon(currentCity) {
 }
 
 
-
+//takes the respoonses from the weather api and translates it to the page
 
 function getWeather(lat, lon) {
     var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial"
-    console.log(weatherUrl);
     return fetch(weatherUrl)
         .then(function(data) {
             return data.json();
         })
         .then(function(data) {
-            // console.log(data);
             var city = data.city.name;
-            console.log(data);
             setCity.textContent = city;
             saveCity(city);
             generateCitySearch();
@@ -90,7 +89,7 @@ function getWeather(lat, lon) {
         });
 }
 
-
+//saves 7 recent cities in the recent search, stored in local storage
 
 function saveCity(cityName) {
 
@@ -99,8 +98,6 @@ function saveCity(cityName) {
     }
 
     const index = all_cities.indexOf(cityName);
-    console.log("Index is: " + index);
-    console.log("ALL cities is: " + all_cities);
     if (index === -1) {
         all_cities.push(cityName);
     } else {
@@ -110,6 +107,8 @@ function saveCity(cityName) {
     localStorage.setItem('top_10_cities', JSON.stringify(all_cities));
 
 }
+
+//searches the city and generates a button for use with the recent search
 
 function generateCitySearch() {
     const container = document.querySelector('.button-container');
@@ -126,12 +125,10 @@ function generateCitySearch() {
             setCity.textContent = cityButton;
             factboxUpdater(cityButton)
             getPhoto(cityButton);
-            console.log(cityButton);
             saveCity(cityButton);
             getLatLon(cityButton).then(function(data) {
                 var lat = data.lat;
                 var lon = data.lon;
-                console.log(lat, lon);
 
                 getWeather(lat, lon);
 
@@ -143,7 +140,7 @@ function generateCitySearch() {
     }
 }
 
-
+//adds click functionality to all buttons for search
 searchCity.addEventListener("click", function() {
     event.preventDefault();
     var currentCity = cityName.value;
@@ -152,14 +149,13 @@ searchCity.addEventListener("click", function() {
     getLatLon(currentCity).then(function(data) {
         var lat = data.lat;
         var lon = data.lon;
-        console.log(lat, lon);
 
         getWeather(lat, lon);
 
     });
 });
 
-
+//updates the fun fact box by making a call to the wikipedia api
 function factboxUpdater(queryCity) {
     fetch(wikiURL + queryCity + "?redirect=true")
         .then(function(response) {
@@ -167,7 +163,6 @@ function factboxUpdater(queryCity) {
         })
         .then(function(response) {
             queryExtract = response.extract
-            console.log(queryExtract)
             let funFact = document.createElement('p');
             factBoxSelector.innerHTML = ""
             funFact.textContent = queryExtract;
@@ -176,7 +171,7 @@ function factboxUpdater(queryCity) {
         });
 }
 
-
+//generates photos for each city and appends them to the page 
 function getPhoto(cityName) {
     var photoUrl = unsplashUrl + cityName + "&client_id=" + unsplashKey;
     fetch(photoUrl)
