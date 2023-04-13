@@ -2,7 +2,8 @@ const apiKey = "20f9a6ae4f100c34e7ae026eafd6150d";
 var cityName = document.getElementById("city-input");
 const setCity = document.getElementById("city-name");
 var searchCity = document.getElementById("search-city");
-let factBoxSelector = document.getElementById('facts');
+let factBoxSelector = document.getElementById("facts");
+let photoBoxSelector = document.getElementById("photo")
 let queryCity =  ""
 let queryExtract = ""
 const wikiURL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
@@ -162,8 +163,13 @@ function factboxUpdater (queryCity){
   })
 .then(function(response) {
   queryExtract = response.extract
+  queryPhoto = response.originalimage.source
   console.log(queryExtract)
+  console.log(queryPhoto)
   let funFact = document.createElement('p');
+  let addPhoto = document.createElement('img')
+  addPhoto.src = queryPhoto
+  photoBoxSelector.appendChild(addPhoto)
   factBoxSelector.innerHTML = ""
   funFact.textContent = queryExtract;
 
