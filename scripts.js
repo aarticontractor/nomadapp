@@ -2,6 +2,12 @@ const apiKey = "20f9a6ae4f100c34e7ae026eafd6150d";
 var cityName = document.getElementById("city-input");
 const setCity = document.getElementById("city-name");
 var searchCity = document.getElementById("search-city");
+let factBoxSelector = document.getElementById("facts");
+let photoBoxSelector = document.getElementById("photo")
+let queryCity =  ""
+let queryExtract = ""
+const wikiURL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
+
 
 
 const localeSettings = {};
@@ -116,6 +122,7 @@ function generateCitySearch() {
     button.addEventListener('click', function() {
       const cityButton = this.textContent;
       setCity.textContent = cityButton;
+      factboxUpdater (cityButton)
       console.log(cityButton);
       saveCity(cityButton);
       getLatLon(cityButton).then(function (data) {
@@ -136,7 +143,8 @@ function generateCitySearch() {
 searchCity.addEventListener("click", function () {
   event.preventDefault();
   var currentCity = cityName.value;
-  
+  let queryCity = cityName.value;
+ factboxUpdater (queryCity)
   getLatLon(currentCity).then(function (data) {
       var lat = data.lat;
       var lon = data.lon;
@@ -146,5 +154,28 @@ searchCity.addEventListener("click", function () {
 
   });
 });
+
+
+function factboxUpdater (queryCity){
+  fetch(wikiURL + queryCity + "?redirect=true")  
+.then(function(response) {
+    return response.json()
+  })
+.then(function(response) {
+  queryExtract = response.extract
+  queryPhoto = response.originalimage.source
+  console.log(queryExtract)
+  console.log(queryPhoto)
+  let funFact = document.createElement('p');
+  let addPhoto = document.createElement('img')
+  addPhoto.src = queryPhoto
+  photoBoxSelector.appendChild(addPhoto)
+  factBoxSelector.innerHTML = ""
+  funFact.textContent = queryExtract;
+
+  factBoxSelector.appendChild(funFact)});
+}
+
+
 
 generateCitySearch();
