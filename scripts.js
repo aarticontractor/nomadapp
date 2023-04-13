@@ -7,6 +7,8 @@ let photoBoxSelector = document.getElementById("photo")
 let queryCity =  ""
 let queryExtract = ""
 const wikiURL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
+const unsplashUrl = "https://api.unsplash.com/search/photos?query="
+const unsplashKey = "EN-MXfxw-2FmgE9wEoI4yOd889kOl2R6jK9TlKZuL5w"
 
 
 
@@ -123,6 +125,7 @@ function generateCitySearch() {
       const cityButton = this.textContent;
       setCity.textContent = cityButton;
       factboxUpdater (cityButton)
+      getPhoto(cityButton);
       console.log(cityButton);
       saveCity(cityButton);
       getLatLon(cityButton).then(function (data) {
@@ -143,8 +146,8 @@ function generateCitySearch() {
 searchCity.addEventListener("click", function () {
   event.preventDefault();
   var currentCity = cityName.value;
-  let queryCity = cityName.value;
- factboxUpdater (queryCity)
+ factboxUpdater (currentCity);
+ getPhoto(currentCity);
   getLatLon(currentCity).then(function (data) {
       var lat = data.lat;
       var lon = data.lon;
@@ -163,17 +166,28 @@ function factboxUpdater (queryCity){
   })
 .then(function(response) {
   queryExtract = response.extract
-  queryPhoto = response.originalimage.source
   console.log(queryExtract)
-  console.log(queryPhoto)
   let funFact = document.createElement('p');
-  let addPhoto = document.createElement('img')
-  addPhoto.src = queryPhoto
-  photoBoxSelector.appendChild(addPhoto)
   factBoxSelector.innerHTML = ""
   funFact.textContent = queryExtract;
 
   factBoxSelector.appendChild(funFact)});
+}
+
+
+function getPhoto(cityName) {
+  var photoUrl = unsplashUrl + cityName + "&client_id=" + unsplashKey;
+  fetch(photoUrl)
+  .then(function(data) {
+    return data.json();
+  })
+  .then(function(data) {
+    var photoUrl = data.results[0].urls.raw;
+    let addPhoto = document.createElement('img');
+    addPhoto.src = photoUrl;
+    photoBoxSelector.appendChild(addPhoto);
+
+  });
 }
 
 
