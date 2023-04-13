@@ -1,8 +1,38 @@
-.test {
-    box-shadow: -23px -23px 45px 0 #f90202,
-        /* 28px 28px 50px 0 #0d2750 29%; */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+
 }
 
-.customBody {
-    background-color: #12a49a;
+
+.button-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 5%;
+    margin-right: 8%;
+  }
+
+.button-container button {
+display: block;
+width: 100%;
+margin-bottom: 10px;
+background-color: rgb(201, 170, 132);
+color: black;
+border-color: black;
+}
+
+.weather-display {
+    border: solid 3px;
+    border-radius: 7deg;
+    border-color: black;
+}
+.emoji{
+    font-size: 3em;
+    text-align: center;
+}
+
+.city-and-date {
+    font-size: 1em;
+    text-align: center;
 }

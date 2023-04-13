@@ -14,16 +14,16 @@
 <body>
 
   <header> 
-    <nav class="navbar has-background-grey is-spaced" role="navigation" aria-label="main navigation">
+    <nav class="navbar has-background-grey-light is-spaced" role="navigation" aria-label="main navigation">
       <h1 class="is-size-3 has-text-weight-bold is-white">NomadApp✈️</h1>
-      <h2 class="is-size-5 has-text-weight-semibold">Your one stop guide for travel!</h2>
+      <h2 class="is-size-5 has-text-weight-semibold">Your encyclopedia for travel!</h2>
   <div class="navbar-end is-dark">
       <div class="field is-grouped">
         <p class="control is-expanded">
           <input id= "city-input" class="input" type="text" placeholder="Find a city..">
         </p>
         <p class="control">
-          <a id = "search-city" class="button  is-info">
+          <a id = "search-city" class="button  is-dark">
             Search
           </a>
         </p>
@@ -37,24 +37,27 @@
       <div class="tile is-parent is-vertical">
         </article>
         <article class="tile is-child notification has-background-warning-light is-hovered">
-          <p class="title" id="city-name"></p>
-          <p >Date: <span id="day"></span></p>
-          <p id="emoji"></p>
-          <ul class="list-group list-group-flush">
+          <p class="city-and-date title" id="city-name">Today's weather:</p>
+          <p class="city-and-date">Date: <span id="day"></span></p>
+          <p class="emoji" id="emoji"></p>
+        
+          <ul class="weather-display">
             <li class="list-group-item">Temp(F): <span id="temp"></span></li>
             <li class="list-group-item">Humidity: <span id="humidity"></span></li>
             <li class="list-group-item">Wind Speed: <span id="wind"></span></li>
           </ul>
+        
+        
+        <div>
           <figure id ="photo" class="image is-3by1"> 
           </figure>
-          
+        </div>
         </article>
       </div>
     </div> 
     <div class="tile is-parent">
       <article class="tile is-child notification has-background-link-light has-shadow">
         <p class="title">Fun Facts!</p>
-        <p class="subtitle">Aligned with the right tile</p>
         <div id = "facts"class="content">
           <p></p>
         </div>
@@ -64,12 +67,11 @@
   <div class="tile is-parent">
     <article class="tile is-child notification has-background-success-light">
       <div class="content">
-        <p class="title">Your recent searches</p>
+        <p class="title">Your recent searches...</p>
         
-        <div class="content">
+        
           <div class="button-container"></div>
-          <!-- Content -->
-        </div>
+          
       </div>
     </article>
   </div>
