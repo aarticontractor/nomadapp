@@ -17,7 +17,7 @@ const unsplashKey = "EN-MXfxw-2FmgE9wEoI4yOd889kOl2R6jK9TlKZuL5w"
 //below makes the list of recent searches in the local storage
 
 const localeSettings = {};
-dayjs.locale(localeSettings);
+
 var all_cities = JSON.parse(localStorage.getItem('top_10_cities')) || [];
 
 var currentDay = document.getElementById("day");
@@ -67,8 +67,13 @@ function getWeather(lat, lon) {
             saveCity(city);
             generateCitySearch();
             var currentDate = (data.list[0].dt_txt).split(" ")[0];
-            var convertedDay = dayjs(currentDate);
-            var humanReadableDate = convertedDay.locale('en').format('DD, MMMM, YYYY');
+            var current = new Date(currentDate);
+            console.log(current);
+
+            const humanReadableDate = current.toDateString();
+            console.log(humanReadableDate);
+
+            
             currentDay.textContent = humanReadableDate;
             currentTemp.textContent = data.list[0].main.temp;
             currentHumidity.textContent = data.list[0].main.humidity;
